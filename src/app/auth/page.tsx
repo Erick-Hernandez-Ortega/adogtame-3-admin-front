@@ -25,6 +25,7 @@ export default async function Auth() {
         <Image
           src="/images/main-picture.webp"
           fill
+          priority
           alt="dog"
           className="absolute inset-0 h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
         />
