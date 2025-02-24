@@ -15,7 +15,7 @@ export async function authenticate(prevState: unknown, formData: FormData) {
     const response = await login(email, password);
 
     if (response?.statusCode === 200) {
-        (await cookies()).set("token", response.token, {
+        (await cookies()).set("token", response.access_token, {
             httpOnly: true,
             path: "/",
             sameSite: "lax"
