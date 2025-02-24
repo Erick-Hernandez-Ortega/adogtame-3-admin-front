@@ -1,4 +1,5 @@
 "use server";
+import { cookies } from "next/headers";
 import { loginSchema } from "../schemas/auth.schema";
 import { login } from "../services/auth.service";
 import { redirect, RedirectType } from "next/navigation";
@@ -13,7 +14,14 @@ export async function authenticate(prevState: unknown, formData: FormData) {
 
     const response = await login(email, password);
 
-    if (response?.statusCode === 200) return redirect("/dashboard", RedirectType.replace);
+    if (response?.statusCode === 200) {
+        (await cookies()).set("token", response.token, {
+            httpOnly: true,
+            path: "/",
+            sameSite: "lax"
+        });
+        return redirect("/dashboard", RedirectType.replace);
+    }
 
     return {
         errors: {
