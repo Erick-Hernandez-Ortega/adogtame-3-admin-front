@@ -15,6 +15,9 @@ import {
 import { links } from "@/shared/data/nav-links"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Caveat } from "next/font/google";
+
+const caveat = Caveat({ subsets: ["latin"] });
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname: string = usePathname();
@@ -22,7 +25,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <h2>Adogtame</h2>
+        <h2 className={`${caveat.className} text-center text-3xl`}>
+            Adogtame
+        </h2>
       </SidebarHeader>
       <SidebarContent>
         {links.map((item) => (
