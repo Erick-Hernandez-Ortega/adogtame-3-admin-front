@@ -1,4 +1,4 @@
-import { ChartArea, House, Users } from "lucide-react";
+import { ChartArea, House, LogOut, Users } from "lucide-react";
 
 interface NavLink {
     title: string;
@@ -27,6 +27,14 @@ const navLinksStadistic: NavLink[] = [
     }
 ]
 
+const navLinksSystem: NavLink[] = [
+    {
+        title: "Cerrar sesión",
+        url: "",
+        icon: LogOut
+    }
+]
+
 export const links = [
     {
         title: "Administrar",
@@ -35,5 +43,9 @@ export const links = [
     {
         title: "Estadisticas",
         items: navLinksStadistic
+    },
+    {
+        title: "Sistema",
+        items: navLinksSystem
     }
 ]

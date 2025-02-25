@@ -38,10 +38,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 {item.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild isActive={pathname === item.url}>
-                      <Link href={item.url}>
-                        <item.icon className="mr-2 h-4 w-4" />
-                        {item.title}
-                      </Link>
+                      {item.title === "Cerrar sesión" ? (
+                        <button onClick={() => {}}>
+                          <item.icon className="mr-2 h-4 w-4" />
+                          {item.title}
+                        </button>
+                      ) : (
+                        <Link href={item.url}>
+                          <item.icon className="mr-2 h-4 w-4" />
+                          {item.title}
+                        </Link>
+                      )}
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
