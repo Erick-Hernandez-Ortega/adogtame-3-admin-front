@@ -52,19 +52,29 @@ const config: Config = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			'cold-purple': {
-				'50': '#f7f7fb',
-				'100': '#f1eff8',
-				'200': '#e6e2f2',
-				'300': '#d2cbe7',
-				'400': '#b3a5d4',
-				'500': '#a08bc7',
-				'600': '#8d71b6',
-				'700': '#7c5ea3',
-				'800': '#684f88',
-				'900': '#564270',
-				'950': '#382a4b',
-			},
+  			'cold-purple': {
+  				'50': '#f7f7fb',
+  				'100': '#f1eff8',
+  				'200': '#e6e2f2',
+  				'300': '#d2cbe7',
+  				'400': '#b3a5d4',
+  				'500': '#a08bc7',
+  				'600': '#8d71b6',
+  				'700': '#7c5ea3',
+  				'800': '#684f88',
+  				'900': '#564270',
+  				'950': '#382a4b'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
