@@ -3,17 +3,11 @@
 import { Button } from "@/shared/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
+import User from "../types/user"
 
-export type PersonColumn = {
-    // id: string
-    // amount: number
-    // status: "pending" | "processing" | "success" | "failed"
-    // email: string
-}
-
-export const columns: ColumnDef<PersonColumn>[] = [
+export const columns: ColumnDef<User>[] = [
     {
-        accessorKey: "_id",
+        accessorKey: "id",
         header: "ID",
     },
     {
