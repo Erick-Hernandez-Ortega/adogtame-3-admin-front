@@ -1,6 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
-import { usersTransformer } from "../transformers/users.transformer";
+import { UserResponse, usersTransformer } from "../transformers/users.transformer";
 import User from "../types/user";
 
 export const getUsers = async (): Promise<{ users: User[] }> => {
@@ -14,7 +14,7 @@ export const getUsers = async (): Promise<{ users: User[] }> => {
             }
         }
     );
-    const users = await response.json();
+    const users: UserResponse[] = await response.json();
 
     return {
         users: users.map(usersTransformer)
