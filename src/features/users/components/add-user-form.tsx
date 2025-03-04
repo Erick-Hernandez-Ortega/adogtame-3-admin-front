@@ -18,35 +18,35 @@ export const AddUserForm = () => {
                         Nombre
                     </Label>
                     <Input id="name" className="col-span-3" name="name" required />
-                    {state?.errors?.name && <p className="text-red-500 text-xs">{state?.errors?.name}</p>}
+                    {state?.errors?.name && <Label className="text-red-500 text-xs text-right">{state?.errors?.name}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="username" className="text-right">
                         Nombre de usuario
                     </Label>
                     <Input id="username" className="col-span-3" name="username" />
-                    {state?.errors?.username && <p className="text-red-500 text-xs">{state?.errors?.username}</p>}
+                    {state?.errors?.username && <Label className="text-red-500 text-xs text-right">{state?.errors?.username}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="email" className="text-right">
                         Correo
                     </Label>
                     <Input id="email" type="email" className="col-span-3" name="email" />
-                    {state?.errors?.email && <p className="text-red-500 text-xs">{state?.errors?.email}</p>}
+                    {state?.errors?.email && <Label className="text-red-500 text-xs text-right">{state?.errors?.email}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="password" className="text-right">
                         Contraseña
                     </Label>
                     <Input id="password" type="password" className="col-span-3" name="password" />
-                    {state?.errors?.password && <p className="text-red-500 text-xs">{state?.errors?.password}</p>}
+                    {state?.errors?.password && <Label className="text-red-500 text-xs text-right">{state?.errors?.password}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="age" className="text-right">
                         Edad
                     </Label>
                     <Input id="age" type="number" className="col-span-3" name="age" />
-                    {state?.errors?.age && <p className="text-red-500 text-xs">{state?.errors?.age}</p>}
+                    {state?.errors?.age && <Label className="text-red-500 text-xs text-right">{state?.errors?.age}</Label>}
                 </div>
             </div>
             <DialogFooter>
