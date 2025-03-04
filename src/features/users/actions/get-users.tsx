@@ -1,7 +1,7 @@
 "use server";
 import { cookies } from "next/headers";
 import { UserResponse, usersTransformer } from "../transformers/users.transformer";
-import User from "../types/user";
+import User from "../types/user.type";
 
 export const getUsers = async (): Promise<{ users: User[] }> => {
     const token: string | undefined = (await cookies()).get("token")?.value;
