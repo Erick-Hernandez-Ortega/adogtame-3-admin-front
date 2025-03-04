@@ -18,31 +18,35 @@ export const AddUserForm = () => {
                         Nombre
                     </Label>
                     <Input id="name" className="col-span-3" name="name" required />
-                    {state?.errors?.email && <p className="text-red-500 text-xs">{state?.errors?.email}</p>}
+                    {state?.errors?.name && <p className="text-red-500 text-xs">{state?.errors?.name}</p>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="username" className="text-right">
                         Nombre de usuario
                     </Label>
                     <Input id="username" className="col-span-3" name="username" />
+                    {state?.errors?.username && <p className="text-red-500 text-xs">{state?.errors?.username}</p>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="email" className="text-right">
                         Correo
                     </Label>
                     <Input id="email" type="email" className="col-span-3" name="email" />
+                    {state?.errors?.email && <p className="text-red-500 text-xs">{state?.errors?.email}</p>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="password" className="text-right">
                         Contraseña
                     </Label>
                     <Input id="password" type="password" className="col-span-3" name="password" />
+                    {state?.errors?.password && <p className="text-red-500 text-xs">{state?.errors?.password}</p>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="age" className="text-right">
                         Edad
                     </Label>
                     <Input id="age" type="number" className="col-span-3" name="age" />
+                    {state?.errors?.age && <p className="text-red-500 text-xs">{state?.errors?.age}</p>}
                 </div>
             </div>
             <DialogFooter>
