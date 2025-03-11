@@ -2,7 +2,7 @@
 import { Input } from "@/shared/components/ui/input";
 import { Label } from "@/shared/components/ui/label";
 import { useActionState, useMemo } from "react";
-import addUser from "../actions/add-user";
+import addUser from "../../actions/add-user";
 import { DialogClose, DialogFooter } from "@/shared/components/ui/dialog";
 import { Button } from "@/shared/components/ui/button";
 
