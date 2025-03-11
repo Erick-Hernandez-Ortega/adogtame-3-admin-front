@@ -1,7 +1,7 @@
 import { Button } from "@/shared/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/shared/components/ui/dialog";
 import { JSX } from "react";
-import { AddUserForm } from "./add-user-form";
+import { AddUserForm } from "../add-user-form";
 
 export const AddUserDialog = (): JSX.Element => {
 

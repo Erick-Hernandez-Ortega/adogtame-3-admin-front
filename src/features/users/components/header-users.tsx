@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { AddUserDialog } from "./add-user-dialog";
+import { AddUserDialog } from "./dialog/add-user-dialog";
 
 export default function HeaderUsers(): JSX.Element {
   return (
