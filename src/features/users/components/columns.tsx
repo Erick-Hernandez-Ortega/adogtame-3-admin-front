@@ -109,6 +109,16 @@ export const columns: ColumnDef<User>[] = [
     {
         accessorKey: "createdAt",
         header: "Fecha de Creación",
+        cell: ({ row }) => {
+            const date: Date = new Date(row.getValue("createdAt"));
+            const dateFormat: string = date?.toLocaleDateString("es-ES", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+            });
+
+            return <span>{dateFormat}</span>
+        }
     },
     {
         id: "actions",
