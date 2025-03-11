@@ -105,6 +105,7 @@ export const columns: ColumnDef<User>[] = [
                 </Button>
             )
         },
+        cell: ({ row }) => <span>{row.getValue("age")} años</span>
     },
     {
         accessorKey: "createdAt",
