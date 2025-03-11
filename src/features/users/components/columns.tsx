@@ -79,7 +79,6 @@ export const columns: ColumnDef<User>[] = [
     {
         id: "actions",
         cell: ({ row }) => {
-            console.log(row.original)
             const user = row.original
 
             return (
