@@ -15,6 +15,9 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/ui/table"
 import { useState } from "react"
 import { Input } from "@/shared/components/ui/input"
+import { useModalStore } from "@/shared/store/modal-store"
+import { EditUserDialog } from "./dialog/edit-user-dialog"
+
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -41,6 +44,7 @@ export function DataTable<TData, TValue>({
             columnFilters,
         },
     });
+    const { isVisibleModalUserEdit, selectedUser } = useModalStore();
 
     return (
         <div>
@@ -98,6 +102,9 @@ export function DataTable<TData, TValue>({
                     </TableBody>
                 </Table>
             </div>
+            {isVisibleModalUserEdit && selectedUser && (
+                <EditUserDialog />
+            )}
         </div>
     )
 }
