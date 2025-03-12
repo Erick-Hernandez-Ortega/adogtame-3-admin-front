@@ -15,3 +15,7 @@ export interface UserCreate {
     age: string;
     password: string;
 }
+
+export interface UserEdit extends Omit<UserCreate, "password"> {
+    id: string;
+}
