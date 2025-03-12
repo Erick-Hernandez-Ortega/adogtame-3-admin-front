@@ -7,7 +7,7 @@ import { JSX, useActionState, useMemo } from "react";
 import { useModalStore } from "@/shared/store/modal-store";
 
 export const EditUserForm = (): JSX.Element => {
-    const initialState = useMemo(() => ({ errors: { email: '', password: '', name: '', username: '', age: '' } }), []);
+    const initialState = useMemo(() => ({ errors: { email: '', name: '', username: '', age: '' } }), []);
     const [state, formAction] = useActionState(editUser, initialState);
     const { selectedUser } = useModalStore();
 
