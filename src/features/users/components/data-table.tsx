@@ -17,6 +17,7 @@ import { useState } from "react"
 import { Input } from "@/shared/components/ui/input"
 import { useModalStore } from "@/shared/store/modal-store"
 import { EditUserDialog } from "./dialog/edit-user-dialog"
+import { RemoveUserDialog } from "./dialog/remove-user-dialog"
 
 
 interface DataTableProps<TData, TValue> {
@@ -44,7 +45,7 @@ export function DataTable<TData, TValue>({
             columnFilters,
         },
     });
-    const { isVisibleModalUserEdit, selectedUser } = useModalStore();
+    const { isVisibleModalUserEdit, selectedUser, isVisibleModalUserRemove } = useModalStore();
 
     return (
         <div>
@@ -104,6 +105,9 @@ export function DataTable<TData, TValue>({
             </div>
             {isVisibleModalUserEdit && selectedUser && (
                 <EditUserDialog />
+            )}
+            {isVisibleModalUserRemove && selectedUser && (
+                <RemoveUserDialog />
             )}
         </div>
     )
