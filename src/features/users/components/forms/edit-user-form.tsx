@@ -2,14 +2,11 @@ import { Button } from "@/shared/components/ui/button";
 import { DialogClose, DialogFooter } from "@/shared/components/ui/dialog";
 import { Input } from "@/shared/components/ui/input";
 import { Label } from "@/shared/components/ui/label";
-import { editUser } from "../../actions/edit-user";
-import { JSX, useActionState, useMemo } from "react";
-import { useModalStore } from "@/shared/store/modal-store";
+import { JSX } from "react";
+import { useUserEditAction } from "../../hooks/use-user-edit-action";
 
 export const EditUserForm = (): JSX.Element => {
-    const initialState = useMemo(() => ({ errors: { email: '', name: '', username: '', age: '' } }), []);
-    const [state, formAction] = useActionState(editUser, initialState);
-    const { selectedUser } = useModalStore();
+    const { selectedUser, formAction, state } = useUserEditAction();
 
     return (
         <form action={formAction}>
