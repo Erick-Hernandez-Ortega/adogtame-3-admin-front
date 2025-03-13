@@ -9,8 +9,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { useModalStore } from "@/shared/store/modal-store";
 
 const ActionCell = ({ row }: { row: Row<User> }) => {
-    const user = row.original;
-    const { openEditModalUser } = useModalStore();
+    const user: User = row.original;
+    const { openEditModalUser, openRemoveModalUser } = useModalStore();
 
     return (
         <DropdownMenu>
@@ -32,7 +32,7 @@ const ActionCell = ({ row }: { row: Row<User> }) => {
                     <Pencil className="h-4 w-4" />
                     Editar
                 </DropdownMenuItem>
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={() => openRemoveModalUser(user)}>
                     <Trash className="h-4 w-4" />
                     Eliminar
                 </DropdownMenuItem>
