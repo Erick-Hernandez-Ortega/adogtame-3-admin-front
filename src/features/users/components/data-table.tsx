@@ -18,6 +18,7 @@ import { Input } from "@/shared/components/ui/input"
 import { useModalStore } from "@/shared/store/modal-store"
 import { EditUserDialog } from "./dialog/edit-user-dialog"
 import { RemoveUserDialog } from "./dialog/remove-user-dialog"
+import { Button } from "@/shared/components/ui/button"
 
 
 interface DataTableProps<TData, TValue> {
@@ -102,6 +103,24 @@ export function DataTable<TData, TValue>({
                         )}
                     </TableBody>
                 </Table>
+            </div>
+            <div className="flex items-center justify-end space-x-2 py-4">
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => table.previousPage()}
+                    disabled={!table.getCanPreviousPage()}
+                >
+                    Atras
+                </Button>
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => table.nextPage()}
+                    disabled={!table.getCanNextPage()}
+                >
+                    Siguiente
+                </Button>
             </div>
             {isVisibleModalUserEdit && selectedUser && (
                 <EditUserDialog />
