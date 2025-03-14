@@ -32,3 +32,17 @@ export const updateUser = async (user: UserEdit) => {
 
     return response.json();
 }
+
+export const deleteUser = async (id: string) => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/users/${id}`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "DELETE",
+    });
+
+    return response.json();
+}
