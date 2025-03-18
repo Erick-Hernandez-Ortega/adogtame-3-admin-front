@@ -1,7 +1,6 @@
-import { JSX } from "react";
 import { AddUserDialog } from "./dialog/add-user-dialog";
 
-export default function HeaderUsers(): JSX.Element {
+export const HeaderUsers = () => {
   return (
     <header className="flex items-center justify-between">
       <div>
