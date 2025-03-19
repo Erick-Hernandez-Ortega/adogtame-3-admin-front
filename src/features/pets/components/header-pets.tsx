@@ -1,3 +1,5 @@
+import { AddPetDialog } from "./dialog/add-pet-dialog";
+
 export const HeaderPets = () => {
     return (
         <header className="flex items-center justify-between">
@@ -9,6 +11,7 @@ export const HeaderPets = () => {
                     asegurando que toda la información esté organizada y al día.
                 </p>
             </div>
+            <AddPetDialog />
         </header>
     );
 }
