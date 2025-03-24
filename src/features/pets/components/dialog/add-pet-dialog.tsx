@@ -1,3 +1,4 @@
+import { AddPetForm } from "../forms/add-pet-form";
 import { Button } from "@/shared/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/shared/components/ui/dialog";
 
@@ -16,7 +17,7 @@ export const AddPetDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
 
-                
+                <AddPetForm />
             </DialogContent>
         </Dialog>
     );
