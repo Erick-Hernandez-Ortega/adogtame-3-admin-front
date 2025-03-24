@@ -31,8 +31,8 @@ export const petSchema = z.object({
         .min(2, {
             message: "La edad debe tener al menos 2 caracteres",
         })
-        .max(4, {
-            message: "La edad debe tener como maximo 4 caracteres",
+        .max(10, {
+            message: "La edad debe tener como maximo 10 caracteres",
         }),
     description: z
         .string()
