@@ -60,3 +60,17 @@ export const findAllUsers = async () => {
 
     return response.json();
 }
+
+export const findAllNames = async () => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/users/names`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "GET",
+    });
+
+    return response.json();
+}
