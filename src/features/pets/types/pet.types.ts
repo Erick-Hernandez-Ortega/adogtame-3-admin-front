@@ -7,4 +7,5 @@ export interface PetForm {
     sex: string;
     typeOfPet: string;
     size: string;
+    owner: string;
 }
