@@ -10,10 +10,10 @@ export const SizeSelect = ({ name }: { name: string }) => {
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>Tamaños</SelectLabel>
-                    <SelectItem value="little">Chico</SelectItem>
-                    <SelectItem value="medium">Mediano</SelectItem>
-                    <SelectItem value="large">Grande</SelectItem>
-                    <SelectItem value="veryLarge">Muy grande</SelectItem>
+                    <SelectItem value="Little">Chico</SelectItem>
+                    <SelectItem value="Medium">Mediano</SelectItem>
+                    <SelectItem value="Large">Grande</SelectItem>
+                    <SelectItem value="VeryLarge">Muy grande</SelectItem>
                 </SelectGroup>
             </SelectContent>
         </Select>

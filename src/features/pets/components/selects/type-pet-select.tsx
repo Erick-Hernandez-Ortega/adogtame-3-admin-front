@@ -9,9 +9,9 @@ export const TypePetSelect = ({ name }: { name: string }) => {
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>Tipo de mascota</SelectLabel>
-                    <SelectItem value="dog">Perro</SelectItem>
-                    <SelectItem value="cat">Gato</SelectItem>
-                    <SelectItem value="other">Otro</SelectItem>
+                    <SelectItem value="Dog">Perro</SelectItem>
+                    <SelectItem value="Cat">Gato</SelectItem>
+                    <SelectItem value="Other">Otro</SelectItem>
                 </SelectGroup>
             </SelectContent>
         </Select>

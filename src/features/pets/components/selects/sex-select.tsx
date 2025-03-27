@@ -9,9 +9,9 @@ export const SexSelect = ({ name }: { name: string }) => {
             <SelectContent>
                 <SelectGroup>
                     <SelectLabel>Sexo</SelectLabel>
-                    <SelectItem value="male">Macho</SelectItem>
-                    <SelectItem value="female">Hembra</SelectItem>
-                    <SelectItem value="unknown">Desconocido</SelectItem>
+                    <SelectItem value="Male">Macho</SelectItem>
+                    <SelectItem value="Female">Hembra</SelectItem>
+                    <SelectItem value="Unknown">Desconocido</SelectItem>
                 </SelectGroup>
             </SelectContent>
         </Select>
