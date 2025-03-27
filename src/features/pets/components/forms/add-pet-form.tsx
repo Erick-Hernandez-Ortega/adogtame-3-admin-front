@@ -8,9 +8,10 @@ import { SizeSelect } from "../selects/size-select";
 import { TypePetSelect } from "../selects/type-pet-select";
 import { StirilizedRadio } from "../radio-group/stirilized-radio";
 import { SexSelect } from "../selects/sex-select";
+import { OwnerCombobox } from "../combobox/owner-combobox";
 
 export const AddPetForm = () => {
-    const { formAction, state } = useAddPet();
+    const { formAction, state, users } = useAddPet();
 
     return (
         <form action={formAction}>
@@ -70,6 +71,13 @@ export const AddPetForm = () => {
                     </Label>
                     <SexSelect name="sex" />
                     {state?.errors?.sex && <Label className="text-red-500 text-xs text-right">{state?.errors?.sex}</Label>}
+                </div>
+                <div className="grid grid-cols-4 items-center gap-4">
+                    <Label htmlFor="owner" className="text-right">
+                        Quien es el dueño?
+                    </Label>
+                    <OwnerCombobox users={users} />
+                    {state?.errors?.owner && <Label className="text-red-500 text-xs text-right">{state?.errors?.owner}</Label>}
                 </div>
             </div>
             <DialogFooter>

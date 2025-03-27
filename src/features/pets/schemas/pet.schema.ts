@@ -70,4 +70,6 @@ export const petSchema = z.object({
         .max(32, {
             message: "El tamaño debe tener como maximo 32 caracteres",
         }),
+    ownerId: z
+        .string()
 })
