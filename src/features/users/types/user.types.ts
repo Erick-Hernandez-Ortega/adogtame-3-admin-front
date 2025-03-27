@@ -19,3 +19,8 @@ export interface UserCreate {
 export interface UserEdit extends Omit<UserCreate, "password"> {
     id: string;
 }
+
+export interface UserName {
+    _id: string;
+    name: string;
+}
