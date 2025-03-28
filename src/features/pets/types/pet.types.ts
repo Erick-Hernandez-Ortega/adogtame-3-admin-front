@@ -14,8 +14,8 @@ export interface PetResponse extends PetForm  {
     _id: string;
     stirilized: boolean;
     sex: 'Male' | 'Female' | 'Unknown';
-    typeOfPet: 'Dog' | 'Cat' | 'Other';
-    size: 'Little' | 'Medium' | 'Large' | 'VeryLarge';
+    typeOfPet: string;
+    size: string;
     available: boolean;
     image: string;
     createdAt: string;
@@ -25,7 +25,7 @@ export interface PetResponse extends PetForm  {
 export interface Pet {
     id: string;
     name: string;
-    type: "Dog" | "Cat" | "Other";
+    type: string;
     age: string;
     image: string;
     createdAt: string;
@@ -33,7 +33,7 @@ export interface Pet {
     description: string;
     stirilized: boolean;
     sex: "Male" | "Female" | "Unknown";
-    size: 'Little' | 'Medium' | 'Large' | 'VeryLarge';
+    size: string;
     available: boolean;
     owner: string;
 }
