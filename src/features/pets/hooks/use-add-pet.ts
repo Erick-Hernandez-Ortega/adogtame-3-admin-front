@@ -35,14 +35,18 @@ export const useAddPet = () => {
         }
     }
 
-    const handleSubmit = (): void => {
-        if (closeButtonRef.current) closeButtonRef.current.click();
-    }
+    useEffect(() => {
+        if (state !== initialState) {
+            const hasErrors: boolean = Object.values(state.errors || {}).some(error => error);
+            if (!hasErrors) {
+                if (closeButtonRef.current) return closeButtonRef.current.click();
+            };
+        }
+    }, [state, initialState]);
 
     return { 
         closeButtonRef,
         formAction,
-        handleSubmit,
         state,
         users,
     };

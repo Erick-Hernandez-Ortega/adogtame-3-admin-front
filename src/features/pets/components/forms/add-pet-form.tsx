@@ -11,10 +11,10 @@ import { SexSelect } from "../selects/sex-select";
 import { OwnerCombobox } from "../combobox/owner-combobox";
 
 export const AddPetForm = () => {
-    const { formAction, state, users, closeButtonRef, handleSubmit } = useAddPet();
+    const { formAction, state, users, closeButtonRef } = useAddPet();
 
     return (
-        <form action={formAction} onSubmit={handleSubmit}>
+        <form action={formAction}>
             <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="name" className="text-right">
