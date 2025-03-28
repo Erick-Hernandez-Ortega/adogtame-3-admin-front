@@ -6,7 +6,7 @@ export default function sizePetTransformer(petSize: string): string {
             return "Mediano";
         case "Large":
             return "Grande";
-        case "ExtraLarge":
+        case "VeryLarge":
             return "Muy grande";
         default:
             return petSize;
