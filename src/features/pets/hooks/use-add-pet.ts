@@ -1,6 +1,6 @@
-import { useActionState, useEffect, useMemo, useState } from "react";
-import addPet from "../actions/add-pet";
+import { RefObject, useActionState, useEffect, useMemo, useRef, useState } from "react";
 import { UserName } from "@/features/users/types/user.types";
+import addPet from "../actions/add-pet";
 import getUsersNames from "@/features/users/actions/get-users-names";
 
 export const useAddPet = () => {
@@ -20,12 +20,13 @@ export const useAddPet = () => {
         }), []);
     const [state, formAction] = useActionState(addPet, initialState);
     const [users, setUsers] = useState<UserName[]>([]);
+    const closeButtonRef: RefObject<HTMLButtonElement | null> = useRef(null);
     
     useEffect(() => {
         getAllUsers();
     }, []);
 
-    const getAllUsers = async () => {
+    const getAllUsers = async (): Promise<void> => {
         try {
             const { users: fetchUsers } = await getUsersNames();
             setUsers(fetchUsers);
@@ -34,9 +35,15 @@ export const useAddPet = () => {
         }
     }
 
+    const handleSubmit = (): void => {
+        if (closeButtonRef.current) closeButtonRef.current.click();
+    }
+
     return { 
-        state,
+        closeButtonRef,
         formAction,
-        users
+        handleSubmit,
+        state,
+        users,
     };
 }

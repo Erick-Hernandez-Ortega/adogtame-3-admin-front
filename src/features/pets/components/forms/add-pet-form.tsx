@@ -11,10 +11,10 @@ import { SexSelect } from "../selects/sex-select";
 import { OwnerCombobox } from "../combobox/owner-combobox";
 
 export const AddPetForm = () => {
-    const { formAction, state, users } = useAddPet();
+    const { formAction, state, users, closeButtonRef, handleSubmit } = useAddPet();
 
     return (
-        <form action={formAction}>
+        <form action={formAction} onSubmit={handleSubmit}>
             <div className="grid gap-4 py-4">
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="name" className="text-right">
@@ -83,7 +83,7 @@ export const AddPetForm = () => {
             <DialogFooter>
                 <Button type="submit">Agregar</Button>
                 <DialogClose asChild>
-                    <Button type="button" variant="secondary">
+                    <Button type="button" variant="secondary" ref={closeButtonRef}>
                         Cerrar
                     </Button>
                 </DialogClose>
