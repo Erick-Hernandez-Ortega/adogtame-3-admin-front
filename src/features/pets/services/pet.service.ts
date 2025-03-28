@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { PetForm } from "../types/pet.types";
+import { PetForm, PetResponse } from "../types/pet.types";
 
 export const createPet = async (pet: PetForm) => {
     "use server";
@@ -12,6 +12,20 @@ export const createPet = async (pet: PetForm) => {
             "Authorization": `Bearer ${token}`,
         },
         method: "POST",
+    });
+
+    return response.json();
+}
+
+export const findAllPets = async (): Promise<PetResponse[]> => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/pets`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "GET",
     });
 
     return response.json();
