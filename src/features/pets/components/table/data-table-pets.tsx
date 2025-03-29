@@ -19,6 +19,8 @@ import { Input } from "@/shared/components/ui/input"
 // import { EditUserDialog } from "./dialog/edit-user-dialog"
 // import { RemoveUserDialog } from "./dialog/remove-user-dialog"
 import { Button } from "@/shared/components/ui/button"
+import { RemovePetDialog } from "../dialog/remove-pet-dialog"
+import { useModalStore } from "@/shared/store/modal-store"
 
 
 interface DataTableProps<TData, TValue> {
@@ -46,7 +48,7 @@ export function DataTablePets<TData, TValue>({
             columnFilters,
         },
     });
-    // const { isVisibleModalUserEdit, selectedUser, isVisibleModalUserRemove } = useModalStore();
+    const { isVisibleModalPetRemove, selectedPet } = useModalStore();
 
     return (
         <div>
@@ -124,10 +126,10 @@ export function DataTablePets<TData, TValue>({
             </div>
             {/* {isVisibleModalUserEdit && selectedUser && (
                 <EditUserDialog />
-            )}
-            {isVisibleModalUserRemove && selectedUser && (
-                <RemoveUserDialog />
             )} */}
+            {isVisibleModalPetRemove && selectedPet && (
+                <RemovePetDialog />
+            )}
         </div>
     )
 }
