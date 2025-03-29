@@ -30,3 +30,17 @@ export const findAllPets = async (): Promise<PetResponse[]> => {
 
     return response.json();
 }
+
+export const deletePet = async (id: string): Promise<unknown> => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/pets/${id}`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "DELETE",
+    });
+
+    return response.json();
+}
