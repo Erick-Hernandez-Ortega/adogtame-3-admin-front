@@ -1,8 +1,13 @@
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/shared/components/ui/select";
 
-export const SexSelect = ({ name }: { name: string }) => {
+interface Props {
+    name: string;
+    value?: string
+}
+
+export const SexSelect = ({ name, value }: Props) => {
     return (
-        <Select name={name} required>
+        <Select name={name} required value={value}>
             <SelectTrigger className="col-span-3">
                 <SelectValue placeholder="Selecciona el sexo de la mascota" />
             </SelectTrigger>
