@@ -2,12 +2,12 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel,
 import { Pet } from "../../types/pet.types";
 import { Row } from "@tanstack/react-table";
 import { Button } from "@/shared/components/ui/button";
-import { Copy, MoreHorizontal, Trash } from "lucide-react";
+import { Copy, MoreHorizontal, Pencil, Trash } from "lucide-react";
 import { useModalStore } from "@/shared/store/modal-store";
 
 export const ActionRowPet = ({ row }: { row: Row<Pet> }) => {
     const pet: Pet = row.original;
-    const { openModalRemovePet } = useModalStore();
+    const { openModalRemovePet, openModalEditPet } = useModalStore();
 
     return (
         <DropdownMenu>
@@ -25,10 +25,10 @@ export const ActionRowPet = ({ row }: { row: Row<Pet> }) => {
                     Copiar ID
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                {/* <DropdownMenuItem onClick={() => openEditModalUser(user)}>
+                <DropdownMenuItem onClick={() => openModalEditPet(pet)}>
                     <Pencil className="h-4 w-4" />
                     Editar
-                </DropdownMenuItem> */}
+                </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => openModalRemovePet(pet)}>
                     <Trash className="h-4 w-4" />
                     Eliminar

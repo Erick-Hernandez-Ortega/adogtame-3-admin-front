@@ -15,12 +15,10 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/shared/components/ui/table"
 import { useState } from "react"
 import { Input } from "@/shared/components/ui/input"
-// import { useModalStore } from "@/shared/store/modal-store"
-// import { EditUserDialog } from "./dialog/edit-user-dialog"
-// import { RemoveUserDialog } from "./dialog/remove-user-dialog"
 import { Button } from "@/shared/components/ui/button"
 import { RemovePetDialog } from "../dialog/remove-pet-dialog"
 import { useModalStore } from "@/shared/store/modal-store"
+import { EditPetDialog } from "../dialog/edit-pet-dialog"
 
 
 interface DataTableProps<TData, TValue> {
@@ -48,7 +46,7 @@ export function DataTablePets<TData, TValue>({
             columnFilters,
         },
     });
-    const { isVisibleModalPetRemove, selectedPet } = useModalStore();
+    const { isVisibleModalPetRemove, selectedPet, isVisibleModalPetEdit } = useModalStore();
 
     return (
         <div>
@@ -124,9 +122,9 @@ export function DataTablePets<TData, TValue>({
                     Siguiente
                 </Button>
             </div>
-            {/* {isVisibleModalUserEdit && selectedUser && (
-                <EditUserDialog />
-            )} */}
+            {isVisibleModalPetEdit && selectedPet && (
+                <EditPetDialog />
+            )}
             {isVisibleModalPetRemove && selectedPet && (
                 <RemovePetDialog />
             )}
