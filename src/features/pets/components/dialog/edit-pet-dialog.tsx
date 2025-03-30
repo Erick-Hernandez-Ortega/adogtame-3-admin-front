@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/shared/components/ui/dialog"
 import { useModalStore } from "@/shared/store/modal-store";
+import { EditPetForm } from "../forms/edit-pet-form";
 
 export const EditPetDialog = () => {
     const { closeModalEditPet } = useModalStore();
@@ -14,7 +15,7 @@ export const EditPetDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
 
-                {/* <RemovePetForm /> */}
+                <EditPetForm />
             </DialogContent>
         </Dialog>
     )
