@@ -1,5 +1,5 @@
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/shared/components/ui/select";
-import translatePet from "@/shared/transformers/translate-pet.transformer";
+import { translatePetType } from "@/shared/transformers/translate-pet.transformer";
 
 interface Props {
     name: string;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const TypePetSelect = ({ name, value }: Props) => {
-    const typeValue: string | undefined = value ? translatePet(value) : undefined;
+    const typeValue: string | undefined = value ? translatePetType(value) : undefined;
 
     return (
         <Select name={name} required value={typeValue}>
