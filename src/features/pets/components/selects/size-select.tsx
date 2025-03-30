@@ -1,9 +1,16 @@
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/shared/components/ui/select";
+import { translatePetSize } from "@/shared/transformers/translate-pet.transformer";
 
+interface Props {
+    name: string;
+    value?: string;
+}
 
-export const SizeSelect = ({ name }: { name: string }) => {
+export const SizeSelect = ({ name, value }: Props) => {
+    const sizeValue: string | undefined = value ? translatePetSize(value) : undefined;
+
     return (
-        <Select name={name} required>
+        <Select name={name} required value={sizeValue}>
             <SelectTrigger className="col-span-3">
                 <SelectValue placeholder="Selecciona un tamaño" />
             </SelectTrigger>
