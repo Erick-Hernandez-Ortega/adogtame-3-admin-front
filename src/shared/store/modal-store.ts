@@ -14,9 +14,12 @@ interface ModalState {
 
     // ? Pet
     isVisibleModalPetRemove: boolean;
+    isVisibleModalPetEdit: boolean;
     selectedPet: Pet | null;
     openModalRemovePet: (pet: Pet) => void;
     closeModalRemovePet: () => void;
+    openModalEditPet: (pet: Pet) => void;
+    closeModalEditPet: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -32,6 +35,9 @@ export const useModalStore = create<ModalState>((set) => ({
     // ? Pet
     selectedPet: null,
     isVisibleModalPetRemove: false,
+    isVisibleModalPetEdit: false,
     openModalRemovePet: (pet: Pet) => set({ isVisibleModalPetRemove: true, selectedPet: pet }),
     closeModalRemovePet: () => set({ isVisibleModalPetRemove: false, selectedPet: null }),
+    openModalEditPet: (pet: Pet) => set({ isVisibleModalPetEdit: true, selectedPet: pet }),
+    closeModalEditPet: () => set({ isVisibleModalPetEdit: false, selectedPet: null }),
 }));
