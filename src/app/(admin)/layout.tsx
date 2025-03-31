@@ -4,6 +4,12 @@ import { AppBreadcrumb } from "@/shared/components/layout/app-breadcrumb";
 import { AppSidebar } from "@/shared/components/layout/app-sidebar";
 import { Separator } from "@/shared/components/ui/separator";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/shared/components/ui/sidebar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adogtame Administrador",
+  description: "Adogtame Administrador",
+};
 
 export default function AdminLayout({
   children,
