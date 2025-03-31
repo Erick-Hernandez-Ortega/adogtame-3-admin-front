@@ -52,7 +52,6 @@ export const EditPetForm = () => {
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="typeOfPet" className="text-right">
                         Tipo de mascota
-                        {selectedPet?.type}
                     </Label>
                     <TypePetSelect name="typeOfPet" value={selectedPet?.type} />
                     {state?.errors?.typeOfPet && <Label className="text-red-500 text-xs text-right">{state?.errors?.typeOfPet}</Label>}
