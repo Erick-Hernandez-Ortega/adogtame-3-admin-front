@@ -19,6 +19,7 @@ export const EditPetForm = () => {
                         Nombre
                     </Label>
                     <Input id="name" defaultValue={selectedPet?.name} className="col-span-3" name="name" required />
+                    <Input id="id" defaultValue={selectedPet?.id} type="hidden" className="col-span-3" name="id" readOnly />
                     {state?.errors?.name && <Label className="text-red-500 text-xs text-right">{state?.errors?.name}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
@@ -74,13 +75,14 @@ export const EditPetForm = () => {
                     <Label htmlFor="owner" className="text-right">
                         Quien es el dueño?
                     </Label>
-                    <Input id="owner" defaultValue={owner?.id} type="hidden" className="col-span-3" name="owner" required readOnly />
+                    <Input id="ownerId" defaultValue={owner?.id} type="hidden" className="col-span-3" name="ownerId" required readOnly />
                     <Input id="ownerName" defaultValue={owner?.name} type="text" className="col-span-3" name="ownerName" readOnly />
-                    {state?.errors?.owner && <Label className="text-red-500 text-xs text-right">{state?.errors?.owner}</Label>}
+                    {state?.errors?.ownerId && <Label className="text-red-500 text-xs text-right">{state?.errors?.ownerId}</Label>}
                 </div>
+                {state?.errors?.general && <Label className="text-red-500 text-xs text-right">{state?.errors?.general}</Label>}
             </div>
             <DialogFooter>
-                <Button type="submit">Agregar</Button>
+                <Button type="submit">Editar</Button>
                 <DialogClose asChild>
                     <Button type="button" variant="secondary">
                         Cerrar
