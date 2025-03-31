@@ -10,7 +10,7 @@ export const SizeSelect = ({ name, value }: Props) => {
     const sizeValue: string | undefined = value ? translatePetSize(value) : undefined;
 
     return (
-        <Select name={name} required value={sizeValue}>
+        <Select name={name} required defaultValue={sizeValue}>
             <SelectTrigger className="col-span-3">
                 <SelectValue placeholder="Selecciona un tamaño" />
             </SelectTrigger>

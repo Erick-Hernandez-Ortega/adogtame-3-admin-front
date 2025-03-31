@@ -10,7 +10,7 @@ export const TypePetSelect = ({ name, value }: Props) => {
     const typeValue: string | undefined = value ? translatePetType(value) : undefined;
 
     return (
-        <Select name={name} required value={typeValue}>
+        <Select name={name} required defaultValue={typeValue}>
             <SelectTrigger className="col-span-3">
                 <SelectValue placeholder="Selecciona un tipo de mascota" />
             </SelectTrigger>

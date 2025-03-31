@@ -7,7 +7,7 @@ interface Props {
 
 export const SexSelect = ({ name, value }: Props) => {
     return (
-        <Select name={name} required value={value}>
+        <Select name={name} required defaultValue={value}>
             <SelectTrigger className="col-span-3">
                 <SelectValue placeholder="Selecciona el sexo de la mascota" />
             </SelectTrigger>
