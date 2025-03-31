@@ -1,13 +1,19 @@
-import { useActionState } from "react";
+import { useActionState, useEffect, useMemo } from "react";
 import removePet from "../actions/remove-pet";
 import { useModalStore } from "@/shared/store/modal-store";
 
 
 export const useRemovePet = () => {
-    // No veo necesidad de useMemo
-    const initialState = { errors: { general: '' } };
+    const initialState = useMemo(() => ({ errors: { general: '' } }), []);
     const [state, formAction] = useActionState(removePet, initialState);
-    const { selectedPet } = useModalStore();
+    const { selectedPet, closeModalRemovePet } = useModalStore();
+
+    useEffect(() => {
+            if (state !== initialState) {
+                const hasErrors: boolean = Object.values(state.errors || {}).some(error => error);
+                if (!hasErrors) return closeModalRemovePet();
+            }
+        }, [state, initialState, closeModalRemovePet]);
 
     return {
         state,
