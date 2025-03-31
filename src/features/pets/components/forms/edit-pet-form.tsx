@@ -72,7 +72,7 @@ export const EditPetForm = () => {
                     {state?.errors?.sex && <Label className="text-red-500 text-xs text-right">{state?.errors?.sex}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="owner" className="text-right">
+                    <Label htmlFor="ownerName" className="text-right">
                         Quien es el dueño?
                     </Label>
                     <Input id="ownerId" defaultValue={owner?.id} type="hidden" className="col-span-3" name="ownerId" required readOnly />
