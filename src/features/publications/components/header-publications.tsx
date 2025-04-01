@@ -1,3 +1,5 @@
+import { AddPublicationDialog } from "./dialog/add-publication-dialog";
+
 export const HeaderPublications = () => {
     return (
         <header className="flex items-center justify-between">
@@ -9,7 +11,7 @@ export const HeaderPublications = () => {
                     Asegura que cada publicación refleje la información precisa y relevante, manteniendo la comunidad informada y conectada.
                 </p>
             </div>
-            {/* <AddPetDialog /> */}
+            <AddPublicationDialog />
         </header>
     );
 }
