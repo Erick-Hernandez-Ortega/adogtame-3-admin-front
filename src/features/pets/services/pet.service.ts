@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { PetForm, PetResponse } from "../types/pet.types";
+import { PetForm, PetName, PetResponse } from "../types/pet.types";
 
 export const createPet = async (pet: PetForm) => {
     "use server";
@@ -61,7 +61,7 @@ export const updatePet = async (id: string, pet: PetForm): Promise<unknown> => {
     return response.json();
 }
 
-export const findAllPetNames = async (): Promise<unknown> => {
+export const findAllPetNames = async (): Promise<PetName[]> => {
     "use server";
     const token: string | undefined = (await cookies()).get("token")?.value;
 
