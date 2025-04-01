@@ -37,3 +37,8 @@ export interface Pet {
     available: boolean;
     owner: string;
 }
+
+export interface PetName {
+    _id: string;
+    name: string;
+}
