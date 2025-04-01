@@ -1,5 +1,6 @@
 import { Button } from "@/shared/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/shared/components/ui/dialog";
+import { AddPublicationForm } from "../forms/add-publication-form";
 
 export const AddPublicationDialog = () => {
 
@@ -16,7 +17,7 @@ export const AddPublicationDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
 
-                {/* <AddPetForm /> */}
+                <AddPublicationForm />
             </DialogContent>
         </Dialog>
     );
