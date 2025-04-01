@@ -8,7 +8,7 @@ import { SizeSelect } from "../selects/size-select";
 import { TypePetSelect } from "../selects/type-pet-select";
 import { StirilizedRadio } from "../radio-group/stirilized-radio";
 import { SexSelect } from "../selects/sex-select";
-import { OwnerCombobox } from "../combobox/owner-combobox";
+import { OwnerCombobox } from "@/shared/components/combobox/owner-combobox";
 
 export const AddPetForm = () => {
     const { formAction, state, users, closeButtonRef } = useAddPet();
