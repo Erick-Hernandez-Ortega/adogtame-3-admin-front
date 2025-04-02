@@ -74,3 +74,17 @@ export const findAllPetNames = async (): Promise<PetName[]> => {
 
     return response.json();
 }
+
+export const findPetsNamesByOwner = async (ownerId: string): Promise<PetName[]> => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/pets/names/${ownerId}`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "GET",
+    });
+
+    return response.json();
+}
