@@ -1,4 +1,4 @@
-import { AddPublicationDialog } from "./dialog/add-publication-dialog";
+// import { AddPublicationDialog } from "./dialog/add-publication-dialog";
 
 export const HeaderPublications = () => {
     return (
@@ -11,7 +11,8 @@ export const HeaderPublications = () => {
                     Asegura que cada publicación refleje la información precisa y relevante, manteniendo la comunidad informada y conectada.
                 </p>
             </div>
-            <AddPublicationDialog />
+            {/* Desabilitar add publication */}
+            {/* <AddPublicationDialog /> */}
         </header>
     );
 }
