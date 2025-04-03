@@ -10,7 +10,7 @@ interface PetPublication {
 
 export interface PublicationResponse {
     _id: string;
-    ownerPublication: OwnerPublication;
+    ownerId: OwnerPublication;
     petId: PetPublication;
     title: string;
     description: string;
@@ -18,4 +18,15 @@ export interface PublicationResponse {
     adoptersIds: string[];
     createdAt: string;
     updatedAt: string;
+}
+
+export interface Publication {
+    id: string;
+    ownerPublication: OwnerPublication;
+    petPublication: PetPublication;
+    title: string;
+    description: string;
+    status: 'created' | 'archived' | 'completed' | 'rejected' | 'approved';
+    adoptersIds: string[];
+    createdAt: string;
 }
