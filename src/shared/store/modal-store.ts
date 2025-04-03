@@ -1,4 +1,5 @@
 import { Pet } from '@/features/pets/types/pet.types';
+import { Publication } from '@/features/publications/types/publication.types';
 import { User } from '@/features/users/types/user.types';
 import { create } from 'zustand';
 
@@ -20,6 +21,12 @@ interface ModalState {
     closeModalRemovePet: () => void;
     openModalEditPet: (pet: Pet) => void;
     closeModalEditPet: () => void;
+
+    // ? Publication
+    isVisibleModalPublicationRemove: boolean;
+    selectedPublication: Publication | null;
+    openModalRemovePublication: (publication: Publication) => void;
+    closeModalRemovePublication: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -40,4 +47,10 @@ export const useModalStore = create<ModalState>((set) => ({
     closeModalRemovePet: () => set({ isVisibleModalPetRemove: false, selectedPet: null }),
     openModalEditPet: (pet: Pet) => set({ isVisibleModalPetEdit: true, selectedPet: pet }),
     closeModalEditPet: () => set({ isVisibleModalPetEdit: false, selectedPet: null }),
+
+    // ? Publication
+    isVisibleModalPublicationRemove: false,
+    selectedPublication: null,
+    openModalRemovePublication: (publication: Publication) => set({ isVisibleModalPublicationRemove: true, selectedPublication: publication }),
+    closeModalRemovePublication: () => set({ isVisibleModalPublicationRemove: false, selectedPublication: null }),
 }));
