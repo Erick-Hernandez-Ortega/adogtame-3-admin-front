@@ -24,9 +24,12 @@ interface ModalState {
 
     // ? Publication
     isVisibleModalPublicationRemove: boolean;
+    isVisibleModalPublicationEdit: boolean;
     selectedPublication: Publication | null;
     openModalRemovePublication: (publication: Publication) => void;
     closeModalRemovePublication: () => void;
+    openModalEditPublication: (publication: Publication) => void;
+    closeModalEditPublication: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -50,7 +53,10 @@ export const useModalStore = create<ModalState>((set) => ({
 
     // ? Publication
     isVisibleModalPublicationRemove: false,
+    isVisibleModalPublicationEdit: false,
     selectedPublication: null,
     openModalRemovePublication: (publication: Publication) => set({ isVisibleModalPublicationRemove: true, selectedPublication: publication }),
     closeModalRemovePublication: () => set({ isVisibleModalPublicationRemove: false, selectedPublication: null }),
+    openModalEditPublication: (publication: Publication) => set({ isVisibleModalPublicationEdit: true, selectedPublication: publication }),
+    closeModalEditPublication: () => set({ isVisibleModalPublicationEdit: false, selectedPublication: null }),
 }));
