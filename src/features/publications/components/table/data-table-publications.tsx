@@ -14,6 +14,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useState } from "react"
 import { Input } from "@/shared/components/ui/input"
 import { Button } from "@/shared/components/ui/button"
+import { RemovePublicationDialog } from "../dialog/remove-publication-dialog"
+import { useModalStore } from "@/shared/store/modal-store"
 // import { useModalStore } from "@/shared/store/modal-store"
 
 interface DataTableProps<TData, TValue> {
@@ -41,7 +43,7 @@ export function DataTablePublications<TData, TValue>({
             columnFilters,
         },
     });
-    // const { isVisibleModalPetRemove, selectedPet, isVisibleModalPetEdit } = useModalStore();
+    const { selectedPublication, isVisibleModalPublicationRemove } = useModalStore();
 
     return (
         <div>
@@ -119,10 +121,10 @@ export function DataTablePublications<TData, TValue>({
             </div>
             {/* {isVisibleModalPetEdit && selectedPet && (
                 <EditPetDialog />
-            )}
-            {isVisibleModalPetRemove && selectedPet && (
-                <RemovePetDialog />
             )} */}
+            {isVisibleModalPublicationRemove && selectedPublication && (
+                <RemovePublicationDialog />
+            )}
         </div>
     )
 }
