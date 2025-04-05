@@ -15,15 +15,14 @@ export const EditPublicationForm = () => {
                     <Label htmlFor="ownerId" className="text-right">
                         Quien es el dueño?
                     </Label>
+                    <Input id="id" defaultValue={selectedPublication?.id} type="hidden" className="col-span-3" name="id" readOnly />
                     <Input id="owner" defaultValue={selectedPublication?.ownerPublication.name} readOnly className="col-span-3" name="owner" required />
-                    {state?.errors?.owner && <Label className="text-red-500 text-xs text-right">{state?.errors?.owner}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="petId" className="text-right">
                         Cual es la mascota?
                     </Label>
                     <Input id="pet" defaultValue={selectedPublication?.petPublication.name} readOnly className="col-span-3" name="pet" required />
-                    {state?.errors?.pet && <Label className="text-red-500 text-xs text-right">{state?.errors?.pet}</Label>}
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="title" className="text-right">
@@ -39,6 +38,7 @@ export const EditPublicationForm = () => {
                     <Textarea defaultValue={selectedPublication?.description} id="description" className="col-span-3" name="description" />
                     {state?.errors?.description && <Label className="text-red-500 text-xs text-right">{state?.errors?.description}</Label>}
                 </div>
+                {state?.errors?.general && <Label className="text-red-500 text-xs text-right">{state?.errors?.general}</Label>}
             </div>
             <DialogFooter>
                 <Button type="submit">Editar</Button>
