@@ -5,7 +5,8 @@ import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
 import { Publication } from "../../types/publication.types"
 import { ActionRowPublication } from "./action-row-publication"
-import statusPublicationTransformer from "@/shared/transformers/status-publication.transformer"
+import { Badge } from "@/shared/components/ui/badge"
+import { getStatusVariant, statusPublicationTransformer } from "@/shared/transformers/status-publication.transformer"
 
 export const columnsPublications: ColumnDef<Publication>[] = [
     {
@@ -71,7 +72,7 @@ export const columnsPublications: ColumnDef<Publication>[] = [
                 </Button>
             )
         },
-        cell: ({ row }) => <span>{statusPublicationTransformer(row.getValue("status"))}</span>
+        cell: ({ row }) => <Badge variant={getStatusVariant(row.getValue("status"))}>{statusPublicationTransformer(row.getValue("status"))}</Badge>
     },
     {
         accessorKey: "createdAt",
