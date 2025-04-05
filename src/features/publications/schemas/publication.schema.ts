@@ -12,20 +12,15 @@ export const publicationSchema = z.object({
         .max(82, {
             message: "El título debe tener como maximo 82 caracteres",
         }),
-    ownerId: z
+    description: z
         .string({
-            required_error: "El ID del dueño es requerido",
+            required_error: "La descripción es requerida",
         })
         .trim()
         .min(2, {
-            message: "El ID del dueño debe tener al menos 2 caracteres",
-        }),
-    petId: z
-        .string({
-            required_error: "El ID de la mascota es requerido",
+            message: "La descripción debe tener al menos 2 caracteres",
         })
-        .trim()
-        .min(2, {
-            message: "El ID de la mascota debe tener al menos 2 caracteres",
+        .max(500, {
+            message: "La descripción debe tener como maximo 500 caracteres",
         }),
 });
