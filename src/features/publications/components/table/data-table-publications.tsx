@@ -16,6 +16,7 @@ import { Input } from "@/shared/components/ui/input"
 import { Button } from "@/shared/components/ui/button"
 import { RemovePublicationDialog } from "../dialog/remove-publication-dialog"
 import { useModalStore } from "@/shared/store/modal-store"
+import { EditPublicationDialog } from "../dialog/edit-publication-dialog"
 // import { useModalStore } from "@/shared/store/modal-store"
 
 interface DataTableProps<TData, TValue> {
@@ -43,7 +44,7 @@ export function DataTablePublications<TData, TValue>({
             columnFilters,
         },
     });
-    const { selectedPublication, isVisibleModalPublicationRemove } = useModalStore();
+    const { selectedPublication, isVisibleModalPublicationRemove, isVisibleModalPublicationEdit } = useModalStore();
 
     return (
         <div>
@@ -119,9 +120,9 @@ export function DataTablePublications<TData, TValue>({
                     Siguiente
                 </Button>
             </div>
-            {/* {isVisibleModalPetEdit && selectedPet && (
-                <EditPetDialog />
-            )} */}
+            {isVisibleModalPublicationEdit && selectedPublication && (
+                <EditPublicationDialog />
+            )}
             {isVisibleModalPublicationRemove && selectedPublication && (
                 <RemovePublicationDialog />
             )}
