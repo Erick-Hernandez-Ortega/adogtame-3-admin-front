@@ -30,3 +30,8 @@ export interface Publication {
     adoptersIds: string[];
     createdAt: string;
 }
+
+export interface PublicationEdit {
+    title: string;
+    description: string;
+}
