@@ -1,4 +1,4 @@
-import { ChartArea, FilePen, House, LogOut, PawPrint, Users } from "lucide-react";
+import { ChartArea, Dog, FilePen, House, LogOut, PawPrint, Users } from "lucide-react";
 
 interface NavLink {
     title: string;
@@ -20,12 +20,17 @@ const navLinksAdmin: NavLink[] = [
     {
         title: "Mascotas",
         url: "/mascotas",
-        icon: PawPrint,
+        icon: Dog,
     },
     {
         title: "Publicaciones",
         url: "/publicaciones",
         icon: FilePen,
+    },
+    {
+        title: "Adopciones",
+        url: "/adopciones",
+        icon: PawPrint,
     }
 ]
 
