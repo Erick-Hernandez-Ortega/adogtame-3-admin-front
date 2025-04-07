@@ -3,7 +3,6 @@
 import { Button } from "@/shared/components/ui/button"
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown } from "lucide-react"
-// import { ActionRowPublication } from "./action-row-publication"
 import { Badge } from "@/shared/components/ui/badge"
 import { getStatusVariant, statusPublicationTransformer } from "@/shared/transformers/status-publication.transformer"
 import { Adoption } from "../../types/adoptions.types"
