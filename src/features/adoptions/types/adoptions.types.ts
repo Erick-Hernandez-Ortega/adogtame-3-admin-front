@@ -33,3 +33,13 @@ export  interface AdoptionResponse {
     createdAt: string;
     updatedAt: string;
 }
+
+export interface Adoption {
+    id: string,
+    pet: PetDetailsResponse;
+    user: UserDetailsResponse;
+    status: "pending" | "approved" | "rejected" | "completed";
+    reason: string;
+    comments: string;
+    createdAt: string;
+}
