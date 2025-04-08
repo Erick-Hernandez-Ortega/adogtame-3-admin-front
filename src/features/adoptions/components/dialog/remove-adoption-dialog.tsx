@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/shared/components/ui/dialog";
 import { useModalStore } from "@/shared/store/modal-store";
+import { RemoveAdoptionForm } from "../forms/remove-adoption-form";
 
 export const RemoveAdoptionDialog = () => {
     const { closeModalRemoveAdoption } = useModalStore();
@@ -14,7 +15,7 @@ export const RemoveAdoptionDialog = () => {
                     </DialogDescription>
                 </DialogHeader>
 
-                {/* <RemovePetForm /> */}
+                <RemoveAdoptionForm />
             </DialogContent>
         </Dialog>
     );
