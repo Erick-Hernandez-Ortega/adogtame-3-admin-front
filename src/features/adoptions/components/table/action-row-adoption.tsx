@@ -1,13 +1,14 @@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/shared/components/ui/dropdown-menu"
 import { Row } from "@tanstack/react-table";
 import { Button } from "@/shared/components/ui/button";
-import { Copy, MoreHorizontal } from "lucide-react";
+import { Copy, MoreHorizontal, Trash } from "lucide-react";
 // import { useModalStore } from "@/shared/store/modal-store";
 import { Adoption } from "../../types/adoptions.types";
+import { useModalStore } from "@/shared/store/modal-store";
 
 export const ActionRowAdoption = ({ row }: { row: Row<Adoption> }) => {
     const adoption: Adoption = row.original;
-    // const { openModalRemovePet, openModalEditPet } = useModalStore();
+    const { openModalRemoveAdoption } = useModalStore();
 
     return (
         <DropdownMenu>
@@ -28,11 +29,11 @@ export const ActionRowAdoption = ({ row }: { row: Row<Adoption> }) => {
                 {/* <DropdownMenuItem onClick={() => openModalEditPet(pet)}>
                     <Pencil className="h-4 w-4" />
                     Editar
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => openModalRemovePet(pet)}>
+                </DropdownMenuItem> */}
+                <DropdownMenuItem onClick={() => openModalRemoveAdoption(adoption)}>
                     <Trash className="h-4 w-4" />
                     Eliminar
-                </DropdownMenuItem> */}
+                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     );

@@ -1,3 +1,4 @@
+import { Adoption } from '@/features/adoptions/types/adoptions.types';
 import { Pet } from '@/features/pets/types/pet.types';
 import { Publication } from '@/features/publications/types/publication.types';
 import { User } from '@/features/users/types/user.types';
@@ -30,6 +31,15 @@ interface ModalState {
     closeModalRemovePublication: () => void;
     openModalEditPublication: (publication: Publication) => void;
     closeModalEditPublication: () => void;
+
+    // ? Adoptions
+    isVisibleModalAdoptionRemove: boolean;
+    // isVisibleModalAdoptionEdit: boolean;
+    selectedAdoption: Adoption | null;
+    openModalRemoveAdoption: (adoption: Adoption) => void;
+    closeModalRemoveAdoption: () => void;
+    // openModalEditAdoption: (adoption: Publication) => void;
+    // closeModalEditAdoption: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -59,4 +69,11 @@ export const useModalStore = create<ModalState>((set) => ({
     closeModalRemovePublication: () => set({ isVisibleModalPublicationRemove: false, selectedPublication: null }),
     openModalEditPublication: (publication: Publication) => set({ isVisibleModalPublicationEdit: true, selectedPublication: publication }),
     closeModalEditPublication: () => set({ isVisibleModalPublicationEdit: false, selectedPublication: null }),
+
+    // ? Adoptions
+    isVisibleModalAdoptionRemove: false,
+    // isVisibleModalAdoptionEdit: false,
+    selectedAdoption: null,
+    openModalRemoveAdoption: (adoption: Adoption) => set({ isVisibleModalAdoptionRemove: true, selectedAdoption: adoption }),
+    closeModalRemoveAdoption: () => set({ isVisibleModalAdoptionRemove: false, selectedAdoption: null }),
 }));

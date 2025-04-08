@@ -16,10 +16,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useState } from "react"
 import { Input } from "@/shared/components/ui/input"
 import { Button } from "@/shared/components/ui/button"
-// import { RemovePetDialog } from "../dialog/remove-pet-dialog"
-// import { useModalStore } from "@/shared/store/modal-store"
-// import { EditPetDialog } from "../dialog/edit-pet-dialog"
-
+import { RemoveAdoptionDialog } from "../dialog/remove-adoption-dialog"
+import { useModalStore } from "@/shared/store/modal-store"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -46,7 +44,7 @@ export function DataTableAdoptions<TData, TValue>({
             columnFilters,
         },
     });
-    // const { isVisibleModalPetRemove, selectedPet, isVisibleModalPetEdit } = useModalStore();
+    const { isVisibleModalAdoptionRemove, selectedAdoption } = useModalStore();
 
     return (
         <div>
@@ -124,10 +122,10 @@ export function DataTableAdoptions<TData, TValue>({
             </div>
             {/* {isVisibleModalPetEdit && selectedPet && (
                 <EditPetDialog />
-            )}
-            {isVisibleModalPetRemove && selectedPet && (
-                <RemovePetDialog />
             )} */}
+            {isVisibleModalAdoptionRemove && selectedAdoption && (
+                <RemoveAdoptionDialog />
+            )}
         </div>
     )
 }
