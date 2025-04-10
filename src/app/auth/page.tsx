@@ -6,7 +6,6 @@ export default async function Auth() {
 
   return (
     <main className="grid min-h-svh lg:grid-cols-2">
-      {/* prueb */}
       <article className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
           <div className="flex items-center gap-2 font-medium">
