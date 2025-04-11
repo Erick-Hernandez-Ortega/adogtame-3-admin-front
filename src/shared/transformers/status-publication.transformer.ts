@@ -10,6 +10,8 @@ export function statusPublicationTransformer(status: string): string {
             return "Rechazada";
         case "approved":
             return "Aprobada";
+        case "pending":
+            return "Pendiente";
         default:
             return status;
     }
