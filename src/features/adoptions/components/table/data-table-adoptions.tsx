@@ -18,6 +18,7 @@ import { Input } from "@/shared/components/ui/input"
 import { Button } from "@/shared/components/ui/button"
 import { RemoveAdoptionDialog } from "../dialog/remove-adoption-dialog"
 import { useModalStore } from "@/shared/store/modal-store"
+import { EditAdoptionDialog } from "../dialog/edit-adoption-dialog"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -44,7 +45,7 @@ export function DataTableAdoptions<TData, TValue>({
             columnFilters,
         },
     });
-    const { isVisibleModalAdoptionRemove, selectedAdoption } = useModalStore();
+    const { isVisibleModalAdoptionRemove, selectedAdoption, isVisibleModalAdoptionEdit } = useModalStore();
 
     return (
         <div>
@@ -120,9 +121,9 @@ export function DataTableAdoptions<TData, TValue>({
                     Siguiente
                 </Button>
             </div>
-            {/* {isVisibleModalPetEdit && selectedPet && (
-                <EditPetDialog />
-            )} */}
+            {isVisibleModalAdoptionEdit && selectedAdoption && (
+                <EditAdoptionDialog />
+            )}
             {isVisibleModalAdoptionRemove && selectedAdoption && (
                 <RemoveAdoptionDialog />
             )}
