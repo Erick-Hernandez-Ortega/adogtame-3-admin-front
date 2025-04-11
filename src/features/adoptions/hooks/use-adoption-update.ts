@@ -3,7 +3,7 @@ import { useActionState, useEffect, useMemo } from "react";
 import editAdoption from "../actions/edit-adoption";
 
 export const useAdoptionUpdate = () => {
-    const initialState = useMemo(() => ({ errors: { general: '', comments: '', reason: '' } }), []);
+    const initialState = useMemo(() => ({ errors: { general: '', comments: '', reason: '', status: '' } }), []);
     const [state, formAction] = useActionState(editAdoption, initialState);
     const { selectedAdoption, closeModalEditAdoption } = useModalStore();
 
