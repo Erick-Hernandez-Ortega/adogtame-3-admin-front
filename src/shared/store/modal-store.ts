@@ -34,12 +34,12 @@ interface ModalState {
 
     // ? Adoptions
     isVisibleModalAdoptionRemove: boolean;
-    // isVisibleModalAdoptionEdit: boolean;
+    isVisibleModalAdoptionEdit: boolean;
     selectedAdoption: Adoption | null;
     openModalRemoveAdoption: (adoption: Adoption) => void;
     closeModalRemoveAdoption: () => void;
-    // openModalEditAdoption: (adoption: Publication) => void;
-    // closeModalEditAdoption: () => void;
+    openModalEditAdoption: (adoption: Adoption) => void;
+    closeModalEditAdoption: () => void;
 }
 
 export const useModalStore = create<ModalState>((set) => ({
@@ -72,8 +72,10 @@ export const useModalStore = create<ModalState>((set) => ({
 
     // ? Adoptions
     isVisibleModalAdoptionRemove: false,
-    // isVisibleModalAdoptionEdit: false,
+    isVisibleModalAdoptionEdit: false,
     selectedAdoption: null,
     openModalRemoveAdoption: (adoption: Adoption) => set({ isVisibleModalAdoptionRemove: true, selectedAdoption: adoption }),
     closeModalRemoveAdoption: () => set({ isVisibleModalAdoptionRemove: false, selectedAdoption: null }),
+    openModalEditAdoption: (adoption: Adoption) => set({ isVisibleModalAdoptionEdit: true, selectedAdoption: adoption }),
+    closeModalEditAdoption: () => set({ isVisibleModalAdoptionEdit: false, selectedAdoption: null }),
 }));
