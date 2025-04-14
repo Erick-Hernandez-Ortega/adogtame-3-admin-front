@@ -35,7 +35,7 @@ export const EditAdoptionForm = () => {
                             <SelectValue placeholder="Estatus" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="approved">Aprovado</SelectItem>
+                            <SelectItem value="approved">Aprobado</SelectItem>
                             <SelectItem value="pending">Pendiente</SelectItem>
                             <SelectItem value="rejected">Rechazado</SelectItem>
                             <SelectItem value="completed">Completado</SelectItem>
