@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
+import { AdminResponse } from "../types/admins.types";
 
-export const findAllAdmins = async (): Promise<unknown> => {
+export const findAllAdmins = async (): Promise<AdminResponse[]> => {
     "use server";
     const token: string | undefined = (await cookies()).get("token")?.value;
 
