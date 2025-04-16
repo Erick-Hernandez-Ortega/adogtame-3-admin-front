@@ -8,3 +8,10 @@ export interface AdminResponse {
     createdAt: Date;
     updatedAt: Date;
 }
+
+export interface Admin {
+    id: string;
+    email: string;
+    name: string;
+    createdAt: Date;
+}	
