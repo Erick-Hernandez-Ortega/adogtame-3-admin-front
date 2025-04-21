@@ -7,8 +7,8 @@ import { StatData } from "../types/dashboard.types";
 const chartConfig = {
 } satisfies ChartConfig
 
-export const AllPetsAvaliableChart = ({data}: { data: StatData[] }) => {
-
+export const PieChartComponent = ({data}: { data: StatData[] }) => {
+    
     return (
         <article className="flex-1 pb-0">
             <ChartContainer
@@ -21,7 +21,7 @@ export const AllPetsAvaliableChart = ({data}: { data: StatData[] }) => {
                         content={<ChartTooltipContent hideLabel />}
                     />
                     <Pie
-                        data={data.slice(1)}
+                        data={data?.slice(1)}
                         dataKey="count"
                         nameKey="label"
                         innerRadius={60}
@@ -49,7 +49,7 @@ export const AllPetsAvaliableChart = ({data}: { data: StatData[] }) => {
                                                 y={(viewBox.cy || 0) + 24}
                                                 className="fill-muted-foreground"
                                             >
-                                                Mascotas
+                                                {data[0]?.label}
                                             </tspan>
                                         </text>
                                     )
@@ -61,7 +61,7 @@ export const AllPetsAvaliableChart = ({data}: { data: StatData[] }) => {
             </ChartContainer>
             <div className="text-center text-sm">
                 <p className="flex items-center justify-center gap-2">
-                    Mascotas disponibles actualmente
+                    {data[0]?.label} disponibles actualmente
                     <TrendingUp className="h-4 w-4" />
                 </p>
             </div>
