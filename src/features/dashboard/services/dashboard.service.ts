@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
-import { PetsAvaliable } from "../types/dashboard.types";
+import { Stat } from "../types/dashboard.types";
 
-export const findAllAvailablePets = async (): Promise<PetsAvaliable> => {
+export const findAllAvailablePets = async (): Promise<Stat[]> => {
     "use server";
     const token: string | undefined = (await cookies()).get("token")?.value;
 
