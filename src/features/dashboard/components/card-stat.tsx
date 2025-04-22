@@ -9,7 +9,7 @@ export const CardStat = ({ data }: { data: Stat }) => {
             <CardHeader className="relative">
                 <CardDescription>{data.label}</CardDescription>
                 <CardTitle className="@[250px]/card:text-3xl text-2xl font-semibold tabular-nums">
-                    {data.count} {isNoun ? "registro" : "registros"}
+                    {data.count} {isNoun ? "registrado" : "registrados"}
                 </CardTitle>
             </CardHeader>
             <CardFooter className="flex-col items-start gap-1 text-sm">
