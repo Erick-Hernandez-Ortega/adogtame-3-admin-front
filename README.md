@@ -24,7 +24,7 @@ Bienvenido al repositorio del **frontend de Adogtame Admin**, una plataforma web
 
 ```bash
 git clone https://github.com/Erick-Hernandez-Ortega/adogtame-3-admin-front.git
-cd adogtame-frontend
+cd adogtame-3-admin-front
 ```
 
 2. Instala las dependencias:
@@ -41,7 +41,7 @@ npm run dev
 4. Configura las variables de entorno:
 
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
 ## 📝 Contribuciones
