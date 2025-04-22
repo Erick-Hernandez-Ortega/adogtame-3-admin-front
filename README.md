@@ -7,7 +7,6 @@ Bienvenido al repositorio del **frontend de Adogtame Admin**, una plataforma web
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [React Hook Form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/) (validaciones)
 - [Shadcn UI](https://ui.shadcn.com/) (componentes)
 
@@ -24,7 +23,7 @@ Bienvenido al repositorio del **frontend de Adogtame Admin**, una plataforma web
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tu-usuario/adogtame-frontend.git
+git clone https://github.com/Erick-Hernandez-Ortega/adogtame-frontend.git
 cd adogtame-frontend
 ```
 
