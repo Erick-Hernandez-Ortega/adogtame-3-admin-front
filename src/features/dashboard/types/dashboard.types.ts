@@ -9,3 +9,9 @@ export interface StatData {
     label: string;
     fill: string;
 }
+
+export interface StatDate {
+    count: number;
+    year: number;
+    mounth: string;
+}
