@@ -1,4 +1,4 @@
-import { ChartArea, ContactRound, Dog, FilePen, House, LogOut, PawPrint, Users } from "lucide-react";
+import { ContactRound, Dog, FilePen, House, LogOut, PawPrint, Users } from "lucide-react";
 
 interface NavLink {
     title: string;
@@ -39,14 +39,6 @@ const navLinksAdmin: NavLink[] = [
     }
 ]
 
-const navLinksStadistic: NavLink[] = [
-    {
-        title: "Datos detallados",
-        url: "/dashboard",
-        icon: ChartArea
-    }
-]
-
 const navLinksSystem: NavLink[] = [
     {
         title: "Cerrar sesión",
@@ -59,10 +51,6 @@ export const links = [
     {
         title: "Administrar",
         items: navLinksAdmin
-    },
-    {
-        title: "Estadisticas",
-        items: navLinksStadistic
     },
     {
         title: "Sistema",
