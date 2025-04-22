@@ -42,3 +42,17 @@ export const findAllPublications = async (): Promise<Stat[]> => {
 
     return response.json();
 }
+
+export const findAllUsers = async (): Promise<Stat> => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/stats/users`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "GET",
+    });
+
+    return response.json();
+}
