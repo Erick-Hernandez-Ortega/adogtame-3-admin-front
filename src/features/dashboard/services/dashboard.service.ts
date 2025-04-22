@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { Stat } from "../types/dashboard.types";
+import { Stat, StatDate } from "../types/dashboard.types";
 
 export const findAllAvailablePets = async (): Promise<Stat[]> => {
     "use server";
@@ -62,6 +62,20 @@ export const findAllAdmins = async (): Promise<Stat> => {
     const token: string | undefined = (await cookies()).get("token")?.value;
 
     const response: Response = await fetch(`${process.env.API_URL}/stats/admins`, {
+        headers: {
+            "Authorization": `Bearer ${token}`,
+        },
+        method: "GET",
+    });
+
+    return response.json();
+}
+
+export const findAllUsersByMonth = async (): Promise<StatDate[]> => {
+    "use server";
+    const token: string | undefined = (await cookies()).get("token")?.value;
+
+    const response: Response = await fetch(`${process.env.API_URL}/stats/users/months`, {
         headers: {
             "Authorization": `Bearer ${token}`,
         },
