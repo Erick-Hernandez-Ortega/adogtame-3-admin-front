@@ -23,7 +23,7 @@ Bienvenido al repositorio del **frontend de Adogtame Admin**, una plataforma web
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/Erick-Hernandez-Ortega/adogtame-frontend.git
+git clone https://github.com/Erick-Hernandez-Ortega/adogtame-3-admin-front.git
 cd adogtame-frontend
 ```
 
